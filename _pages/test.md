@@ -1,16 +1,11 @@
 ---
 layout: single
-title: "Join for the huzz"
+title: "Join for the baddies"
 permalink: /goon
 ---
 
-# Join the Movement
+# Sign Up and Get involved with the chuzz (child huzz)
 
-Fill out the form below — whether you want to volunteer, get updates, or collaborate, we’d love to hear from you.
+Please fill out the form below. We’d love to goon contigo.
 
-<div style="position: relative; padding-bottom: 65%; height: 0; overflow: hidden;">
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeVhOC2mg6lN_B7ytpcA4vClvMhpWvvlOPqvSRuBLSG21zZFw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0"
-    style="position: absolute; top:0; left: 0; width: 100%; height: 100%;">
-    Loading…
-  </iframe>
-</div>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeVhOC2mg6lN_B7ytpcA4vClvMhpWvvlOPqvSRuBLSG21zZFw/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
