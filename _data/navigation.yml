@@ -4,3 +4,5 @@ main:
     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "Join Us"
     url: /join
+- title: "Lebron"
+  url: /test
