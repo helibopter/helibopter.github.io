@@ -1,3 +1,8 @@
+---
+title: Join Us
+permalink: /join
+layout: default  # or whatever layout you're using for your other pages
+---
 ## Become a Student or Volunteer
 
 We’re excited you’re interested in joining us! Below are the links to apply:
