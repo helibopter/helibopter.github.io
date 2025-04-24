@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Terms & Privacy Policy"
-permalink: /terms/
+permalink: /default/
 excerpt: "How we handle your data and what you agree to by using this site."
 toc: true
 ---

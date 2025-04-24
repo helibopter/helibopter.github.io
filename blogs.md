@@ -1,7 +1,7 @@
 ---
 title: "Student Blogs"
 permalink: /blogs/
-layout: page
+layout: default
 author_profile: true
 ---
 
