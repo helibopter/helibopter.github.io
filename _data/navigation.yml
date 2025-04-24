@@ -2,7 +2,6 @@
 main:
   - title: "Explore Our Courses"
     url: /courses/
-    description: "test"
   - title: "Meet the Team"
     url: /staff/
   - title: "Join Us"
