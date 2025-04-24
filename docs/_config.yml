@@ -188,18 +188,9 @@ kramdown:
 
 # Collections
 collections:
-  docs:
+  blogs:
     output: true
-    permalink: /:collection/:path/
-  recipes:
-    output: true
-    permalink: /:collection/:path/
-  pets:
-    output: true
-    permalink: /:collection/:path/
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
+    permalink: /blogs/:path/
 
 
 # Defaults

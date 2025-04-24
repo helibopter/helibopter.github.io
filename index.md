@@ -12,7 +12,7 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 excerpt: "We help students build real-world English skills with lessons that make sense — for school, for life, and for the conversations that matter most."
 intro:
-  - excerpt: 'Nullam suscipit et nam, tellus velit pellentesque at malesuada, enim eaque. Quis nulla, netus tempor in diam gravida tincidunt, *proin faucibus* voluptate felis id sollicitudin. Centered with `type="center"`'
+  - excerpt: 'We’re on a mission to make learning more accessible and practical for students everywhere. Explore our resources, meet the team, and see how you can get involved.'
 feature_row:
   - image_path: assets/images/splash.png
     alt: "placeholder image 1"
