@@ -1,0 +1,33 @@
+---
+layout: default
+title: Student Blogs
+permalink: /blogs/
+pagination:
+  enabled: true
+  collection: blogs
+---
+
+<h1>All Student Blogs</h1>
+
+<ul>
+  {% for blog in paginator.posts %}
+    <li><a href="{{ blog.url }}">{{ blog.title }}</a></li>
+  {% endfor %}
+</ul>
+
+<div class="pagination">
+  <span class="page-number">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}">Previous</a>
+    {% else %}
+      <span class="disabled">Previous</span>
+    {% endif %}
+  </span>
+  <span class="page-number">
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}">Next</a>
+    {% else %}
+      <span class="disabled">Next</span>
+    {% endif %}
+  </span>
+</div>
