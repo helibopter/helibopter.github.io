@@ -1,5 +1,4 @@
 ---
-layout: default
 title: "Terms & Privacy Policy"
 permalink: /terms/
 excerpt: "How we handle your data and what you agree to by using this site."
