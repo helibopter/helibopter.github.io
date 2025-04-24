@@ -1,7 +1,7 @@
 ---
 title: "Student Blogs"
 permalink: /blogs/
-layout: default
+layout: page
 author_profile: true
 ---
 
@@ -15,3 +15,6 @@ author_profile: true
     </li>
   {% endfor %}
 </ul>
+
+<!-- Debugging line: show the blogs collection -->
+<p>{{ site.blogs | size }} blog posts found.</p>
