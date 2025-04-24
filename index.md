@@ -7,8 +7,8 @@ header:
   overlay_filter: "0.5"
   overlay_image: /assets/images/splash.png
   actions:
-    - label: "More Info"
-      url: "/info"
+    - label: "Enroll"
+      url: "/enroll"
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 excerpt: "We help students build real-world English skills with lessons that make sense — for school, for life, and for the conversations that matter most."
 intro:
