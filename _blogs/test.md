@@ -1,5 +1,8 @@
 ---
-title: "My First Blog"
+title: "Introductory Blog"
 date: 2025-04-24
+layout: default
 ---
-This is the content of my first blog post!
+
+Welcome to the student blog section!  
+Want to publish your own? Email us at [mastersofrealenglish@gmail.com](mailto:mastersofrealenglish@gmail.com).
