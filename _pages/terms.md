@@ -8,7 +8,7 @@ toc: true
 
 # Terms & Privacy Policy
 
-_Last updated: {{ site.time | date: "%B %d, %Y" }}_
+_Last updated: April 24, 2025_
 
 By accessing and using this website, you agree to the terms and conditions outlined below. This includes how we collect and use any data provided through forms.
 
@@ -18,8 +18,8 @@ By accessing and using this website, you agree to the terms and conditions outli
 
 We only collect personal information that you voluntarily provide through forms on this site. This may include:
 
-- Your name
-- Your email address
+- Your name  
+- Your email address  
 - Any content or message you include in form submissions
 
 We do **not** collect any information beyond what you directly provide.
