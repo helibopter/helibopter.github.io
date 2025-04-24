@@ -1,6 +1,28 @@
-# main links
-main:
-  - title: "Join Us"
-    url: /join
-  - title: "Lebron"
-    url: /goon
+- title: Courses
+  url: /courses/
+  submenu:
+    - title: Beginner
+      url: /courses/beginner/
+    - title: Intermediate
+      url: /courses/intermediate/
+    - title: Advanced
+      url: /courses/advanced/
+
+- title: Learn
+  url: /learn/
+  submenu:
+    - title: Sample Lessons
+      url: /learn/sample-lessons/
+    - title: Study Tips
+      url: /learn/study-tips/
+
+- title: About
+  url: /about/
+
+- title: Join Us
+  url: /join/
+  submenu:
+    - title: Enroll
+      url: /join/enroll/
+    - title: Volunteer
+      url: /join/volunteer/
