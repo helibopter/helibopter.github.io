@@ -1,13 +1,13 @@
 # main links
 main:
-  - title: "Courses"
+  - title: "Explore Our Courses"
     url: /courses/
+  - title: "Meet the Team"
+    url: /staff/
   - title: "Join Us"
     url: /join/
   - title: "About"
     url: /about/
-  - title: "staff"
-    url: /collection-archive/
   - title: "Terms &amp; Privacy Policy"
     url: /terms/
 
