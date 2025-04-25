@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Our Courses"
+permalink: /courses/
 ---
 
 <h1>Our Courses</h1>
