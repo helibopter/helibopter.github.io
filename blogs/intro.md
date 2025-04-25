@@ -1,5 +1,6 @@
 ---
 title: "Welcome to the Student Blog! Submit Your Blogs"
+layout: default
 date: 2025-04-24
 ---
 Welcome to the **Student Blog**!
