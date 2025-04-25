@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 permalink: /blogs
 title: "Welcome to the MORE Blogs Page"
 categories: blog
