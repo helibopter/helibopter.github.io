@@ -1,5 +1,6 @@
 ---
-layout: archive
+layout: single
+author_profile: true
 permalink: /blogs
 title: "Welcome to the MORE Blogs Page"
 categories: blog
