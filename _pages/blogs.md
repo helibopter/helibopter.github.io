@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: single
 permalink: /blogs
 title: "Welcome to the MORE Blogs Page"
 categories: blog
