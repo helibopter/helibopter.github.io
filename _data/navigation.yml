@@ -8,9 +8,12 @@ main:
     url: /join/
   - title: "About the Program"
     url: /about/
+  - title: "Student Blog"
+    url: /blogs/
+  - title: "FAQ"
+    url: /donate/
   - title: "Terms &amp; Privacy Policy"
     url: /terms/
-
 
 # documentation links
 docs:
