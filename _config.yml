@@ -318,6 +318,11 @@ collections:
     output: true
     permalink: /:blogs/:path/
 
+  courses:
+    output: true
+    permalink: /courses/:title/
+
+
 
 defaults:
   # _blogs
