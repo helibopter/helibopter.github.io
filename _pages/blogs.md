@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: archive-taxonomy
 permalink: /blogs
 title: "Welcome to the MORE Blogs Page"
 categories: blog
