@@ -3,7 +3,7 @@ layout: posts
 permalink: /blogs
 title: "Welcome to the MORE Blogs Page"
 categories: blog
-author: MORE Team
+author: Gaurav Koli
 ---
 
 At **Masters of Real English (MORE)**, we believe that every student has something valuable to say. This blog is a platform for students to express themselves through writing, share their perspectives, and connect with others.
