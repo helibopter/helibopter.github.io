@@ -11,6 +11,8 @@ main:
   - title: "Student Blog"
     url: /blogs/
   - title: "FAQ"
+    url: /faq/
+  - title: "Donations"
     url: /donate/
   - title: "Terms &amp; Privacy Policy"
     url: /terms/
