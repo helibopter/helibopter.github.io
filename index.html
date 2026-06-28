@@ -1,1205 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Masters of Real English</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --ink: #1a1612;
-    --ink-mid: #4a443c;
-    --ink-light: #8a8278;
-    --cream: #faf7f2;
-    --cream-deep: #f0ebe0;
-    --gold: #b8892a;
-    --gold-light: #e8c97a;
-    --gold-pale: #fdf5e0;
-    --teal: #1f6b5e;
-    --teal-light: #d6ede8;
-    --rule: rgba(26,22,18,0.12);
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--cream);
-    color: var(--ink);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    line-height: 1.7;
-    font-size: 16px;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(250,247,242,0.94);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--rule);
-    padding: 0 5vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
-  }
-
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    color: var(--ink);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .logo-mark {
-    width: 32px; height: 32px;
-    background: var(--ink);
-    border-radius: 4px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .logo-mark span {
-    font-family: 'Cormorant Garamond', serif;
-    color: var(--gold-light);
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: -0.5px;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-mid);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--gold); }
-
-  .nav-cta {
-    font-size: 0.78rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    background: var(--ink);
-    color: var(--cream) !important;
-    padding: 8px 20px;
-    border-radius: 2px;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-  }
-
-  .nav-cta:hover { background: var(--gold) !important; color: var(--ink) !important; }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 64px;
-    overflow: hidden;
-  }
-
-  .hero-left {
-    padding: 8vw 5vw 8vw 8vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-  }
-
-  .hero-eyebrow {
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .hero-eyebrow::before {
-    content: '';
-    display: block;
-    width: 32px; height: 1px;
-    background: var(--gold);
-  }
-
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3.2rem, 5.5vw, 5.5rem);
-    font-weight: 500;
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-    margin-bottom: 2rem;
-  }
-
-  .hero-title em {
-    font-style: italic;
-    color: var(--gold);
-  }
-
-  .hero-desc {
-    font-size: 1.05rem;
-    color: var(--ink-mid);
-    max-width: 420px;
-    line-height: 1.8;
-    margin-bottom: 3rem;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary {
-    background: var(--ink);
-    color: var(--cream);
-    padding: 14px 32px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 2px;
-    border: 1.5px solid var(--ink);
-    transition: all 0.25s;
-  }
-
-  .btn-primary:hover {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: var(--ink);
-  }
-
-  .btn-ghost {
-    background: transparent;
-    color: var(--ink);
-    padding: 14px 32px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 2px;
-    border: 1.5px solid var(--rule);
-    transition: all 0.25s;
-  }
-
-  .btn-ghost:hover {
-    border-color: var(--ink-mid);
-  }
-
-  .hero-stats {
-    display: flex;
-    gap: 2.5rem;
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--rule);
-  }
-
-  .stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
-    font-weight: 500;
-    color: var(--ink);
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    margin-top: 4px;
-  }
-
-  .hero-right {
-    background: var(--ink);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .hero-right-inner {
-    padding: 6vw;
-    position: relative;
-    z-index: 2;
-  }
-
-  .hero-right-bg {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 70% 30%, rgba(184,137,42,0.15) 0%, transparent 65%);
-  }
-
-  .quote-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 6px;
-    padding: 2.5rem;
-    max-width: 380px;
-  }
-
-  .quote-mark {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 5rem;
-    color: var(--gold);
-    line-height: 0.6;
-    margin-bottom: 1.2rem;
-    display: block;
-  }
-
-  .quote-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.45rem;
-    font-style: italic;
-    color: rgba(250,247,242,0.9);
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-  }
-
-  .quote-attr {
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-  }
-
-  .floating-badge {
-    position: absolute;
-    bottom: 10%;
-    right: 8%;
-    background: var(--gold);
-    border-radius: 50%;
-    width: 110px;
-    height: 110px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 10px;
-    animation: spin-slow 20s linear infinite;
-  }
-
-  @keyframes spin-slow {
-    to { transform: rotate(360deg); }
-  }
-
-  .floating-badge-inner {
-    animation: spin-slow-reverse 20s linear infinite;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  @keyframes spin-slow-reverse {
-    to { transform: rotate(-360deg); }
-  }
-
-  .badge-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--ink);
-    line-height: 1;
-  }
-
-  .badge-text {
-    font-size: 0.6rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink);
-    text-align: center;
-    line-height: 1.3;
-    margin-top: 3px;
-  }
-
-  /* SECTION WRAPPER */
-  section {
-    padding: 7rem 8vw;
-  }
-
-  .section-tag {
-    font-size: 0.7rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 1.2rem;
-  }
-
-  .section-tag::before {
-    content: '';
-    display: block;
-    width: 24px; height: 1px;
-    background: var(--gold);
-    flex-shrink: 0;
-  }
-
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 3.5vw, 3.5rem);
-    font-weight: 500;
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-    margin-bottom: 1.2rem;
-  }
-
-  .section-sub {
-    font-size: 1rem;
-    color: var(--ink-mid);
-    max-width: 540px;
-    line-height: 1.8;
-  }
-
-  /* MISSION STRIP */
-  .mission-strip {
-    background: var(--ink);
-    padding: 5rem 8vw;
-  }
-
-  .mission-strip-inner {
-    display: grid;
-    grid-template-columns: 1fr 1px 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .mission-divider {
-    background: rgba(255,255,255,0.15);
-    align-self: stretch;
-  }
-
-  .mission-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 3vw, 3rem);
-    font-weight: 400;
-    font-style: italic;
-    color: rgba(250,247,242,0.95);
-    line-height: 1.25;
-  }
-
-  .mission-title strong {
-    font-style: normal;
-    font-weight: 600;
-    color: var(--gold-light);
-  }
-
-  .mission-text {
-    color: rgba(250,247,242,0.65);
-    font-size: 0.95rem;
-    line-height: 1.85;
-  }
-
-  .mission-text p + p {
-    margin-top: 1rem;
-  }
-
-  /* PROGRAMS */
-  .programs-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    margin-top: 4rem;
-    background: var(--rule);
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-
-  .program-card {
-    background: var(--cream);
-    padding: 2.5rem;
-    transition: background 0.25s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .program-card:hover {
-    background: var(--gold-pale);
-  }
-
-  .program-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 3px;
-    background: var(--gold);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.35s ease;
-  }
-
-  .program-card:hover::after {
-    transform: scaleX(1);
-  }
-
-  .program-icon {
-    width: 44px; height: 44px;
-    border: 1.5px solid var(--rule);
-    border-radius: 4px;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 1.5rem;
-    background: var(--cream-deep);
-  }
-
-  .program-icon svg {
-    width: 20px; height: 20px;
-    stroke: var(--gold);
-    fill: none;
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  .program-level {
-    font-size: 0.68rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.5rem;
-  }
-
-  .program-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.55rem;
-    font-weight: 500;
-    margin-bottom: 0.8rem;
-    line-height: 1.2;
-  }
-
-  .program-desc {
-    font-size: 0.88rem;
-    color: var(--ink-mid);
-    line-height: 1.75;
-    margin-bottom: 1.5rem;
-  }
-
-  .program-features {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .program-features li {
-    font-size: 0.8rem;
-    color: var(--ink-mid);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .program-features li::before {
-    content: '';
-    width: 14px; height: 1px;
-    background: var(--gold);
-    flex-shrink: 0;
-  }
-
-  /* WHY US */
-  .why-section {
-    background: var(--cream-deep);
-  }
-
-  .why-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-    margin-top: 3rem;
-  }
-
-  .why-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .why-item {
-    display: grid;
-    grid-template-columns: 36px 1fr;
-    gap: 1rem;
-    align-items: start;
-  }
-
-  .why-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--gold);
-    line-height: 1;
-    padding-top: 2px;
-  }
-
-  .why-item-title {
-    font-weight: 500;
-    font-size: 0.95rem;
-    margin-bottom: 0.3rem;
-    letter-spacing: 0.01em;
-  }
-
-  .why-item-text {
-    font-size: 0.875rem;
-    color: var(--ink-mid);
-    line-height: 1.75;
-  }
-
-  .why-visual {
-    position: relative;
-  }
-
-  .why-big-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-    font-style: italic;
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 1.4;
-    padding: 2.5rem;
-    background: var(--cream);
-    border-left: 3px solid var(--gold);
-    border-radius: 0 4px 4px 0;
-  }
-
-  .why-big-quote cite {
-    display: block;
-    font-family: 'DM Sans', sans-serif;
-    font-style: normal;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-top: 1rem;
-  }
-
-  /* PROCESS */
-  .process-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    margin-top: 4rem;
-    position: relative;
-  }
-
-  .process-row::before {
-    content: '';
-    position: absolute;
-    top: 24px;
-    left: 12.5%;
-    right: 12.5%;
-    height: 1px;
-    background: var(--rule);
-  }
-
-  .process-step {
-    padding: 0 1.5rem;
-    text-align: center;
-    position: relative;
-  }
-
-  .step-dot {
-    width: 48px; height: 48px;
-    border-radius: 50%;
-    background: var(--cream);
-    border: 1.5px solid var(--rule);
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 1.5rem;
-    position: relative;
-    z-index: 1;
-    transition: all 0.25s;
-  }
-
-  .process-step:hover .step-dot {
-    background: var(--gold);
-    border-color: var(--gold);
-  }
-
-  .step-dot-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--ink-mid);
-    transition: color 0.25s;
-  }
-
-  .process-step:hover .step-dot-num {
-    color: var(--ink);
-  }
-
-  .step-title {
-    font-weight: 500;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.01em;
-  }
-
-  .step-desc {
-    font-size: 0.8rem;
-    color: var(--ink-mid);
-    line-height: 1.7;
-  }
-
-  /* TESTIMONIALS */
-  .testimonials-section {
-    background: var(--ink);
-    padding: 7rem 8vw;
-  }
-
-  .testimonials-section .section-tag { color: var(--gold-light); }
-  .testimonials-section .section-tag::before { background: var(--gold-light); }
-  .testimonials-section .section-title { color: rgba(250,247,242,0.95); }
-
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 4rem;
-  }
-
-  .testimonial-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 4px;
-    padding: 2rem;
-    transition: background 0.25s, border-color 0.25s;
-  }
-
-  .testimonial-card:hover {
-    background: rgba(255,255,255,0.08);
-    border-color: rgba(184,137,42,0.4);
-  }
-
-  .testimonial-stars {
-    display: flex;
-    gap: 3px;
-    margin-bottom: 1.2rem;
-  }
-
-  .star {
-    width: 12px; height: 12px;
-    background: var(--gold);
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  }
-
-  .testimonial-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-style: italic;
-    color: rgba(250,247,242,0.85);
-    line-height: 1.65;
-    margin-bottom: 1.5rem;
-  }
-
-  .testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: 1.2rem;
-  }
-
-  .author-avatar {
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    background: var(--gold);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--ink);
-    flex-shrink: 0;
-  }
-
-  .author-name {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: rgba(250,247,242,0.9);
-  }
-
-  .author-detail {
-    font-size: 0.72rem;
-    color: rgba(250,247,242,0.45);
-    letter-spacing: 0.04em;
-  }
-
-  /* CTA */
-  .cta-section {
-    text-align: center;
-    padding: 8rem 8vw;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cta-section::before {
-    content: 'MORE';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22vw;
-    font-weight: 600;
-    color: rgba(26,22,18,0.03);
-    white-space: nowrap;
-    pointer-events: none;
-    letter-spacing: -0.03em;
-  }
-
-  .cta-section .section-tag {
-    justify-content: center;
-  }
-
-  .cta-section .section-tag::before {
-    display: none;
-  }
-
-  .cta-section .section-title {
-    margin: 0 auto 1.2rem;
-  }
-
-  .cta-section .section-sub {
-    margin: 0 auto 3rem;
-    text-align: center;
-  }
-
-  .cta-actions {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  /* FOOTER */
-  footer {
-    background: #100e0b;
-    padding: 4rem 8vw 2.5rem;
-  }
-
-  .footer-top {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 3rem;
-    padding-bottom: 3rem;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-    margin-bottom: 2rem;
-  }
-
-  .footer-brand p {
-    font-size: 0.85rem;
-    color: rgba(250,247,242,0.45);
-    line-height: 1.8;
-    margin-top: 1rem;
-    max-width: 280px;
-  }
-
-  .footer-col-title {
-    font-size: 0.68rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    margin-bottom: 1.2rem;
-  }
-
-  .footer-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-
-  .footer-links a {
-    font-size: 0.85rem;
-    color: rgba(250,247,242,0.5);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .footer-links a:hover { color: rgba(250,247,242,0.9); }
-
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .footer-copy {
-    font-size: 0.75rem;
-    color: rgba(250,247,242,0.3);
-    letter-spacing: 0.04em;
-  }
-
-  .footer-nonprofit {
-    font-size: 0.72rem;
-    color: var(--gold);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    background: rgba(184,137,42,0.12);
-    border: 1px solid rgba(184,137,42,0.25);
-    padding: 5px 14px;
-    border-radius: 2px;
-  }
-
-  /* MOBILE */
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; }
-    .hero-right { min-height: 400px; }
-    .programs-grid { grid-template-columns: 1fr; }
-    .testimonials-grid { grid-template-columns: 1fr; }
-    .process-row { grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .process-row::before { display: none; }
-    .why-grid { grid-template-columns: 1fr; }
-    .mission-strip-inner { grid-template-columns: 1fr; }
-    .mission-divider { display: none; }
-    .footer-top { grid-template-columns: 1fr 1fr; }
-    nav { padding: 0 4vw; }
-    .nav-links { display: none; }
-  }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .hero-eyebrow { animation: fadeUp 0.7s ease both; }
-  .hero-title { animation: fadeUp 0.7s 0.1s ease both; }
-  .hero-desc { animation: fadeUp 0.7s 0.2s ease both; }
-  .hero-actions { animation: fadeUp 0.7s 0.3s ease both; }
-  .hero-stats { animation: fadeUp 0.7s 0.4s ease both; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masters of Real English</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      color: #1a2340;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      border-bottom: 0.5px solid #e2e6f0;
+    }
+    .wordmark { font-size: 15px; font-weight: 600; color: #1a2340; letter-spacing: -0.01em; }
+    .wordmark span { color: #1a7f74; }
+    .badge {
+      font-size: 11px;
+      background: #e8f5f3;
+      color: #1a7f74;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 500;
+      border: 0.5px solid #b2ddd9;
+    }
+
+    /* CONSTRUCTION BAR */
+    .construction-bar {
+      background: #f7f9fc;
+      border-bottom: 0.5px solid #e2e6f0;
+      padding: 13px 40px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .construction-bar p { font-size: 13px; color: #4a5570; }
+    .construction-bar strong { color: #1a2340; font-weight: 600; }
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #f0c040;
+      flex-shrink: 0;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 72px 40px 64px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .tag {
+      font-size: 11px;
+      color: #1a7f74;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 38px;
+      font-weight: 600;
+      color: #1a2340;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em { font-style: normal; color: #1a7f74; }
+    .hero p { font-size: 16px; color: #4a5570; line-height: 1.75; margin-bottom: 32px; }
+
+    .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: #1a7f74;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: #166e64; }
+    .btn-secondary {
+      background: #fff;
+      color: #1a2340;
+      border: 0.5px solid #c8cedd;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-secondary:hover { background: #f7f9fc; }
+
+    /* DIVIDER */
+    .divider { height: 0.5px; background: #e2e6f0; margin: 0 40px; }
+
+    /* SECTIONS */
+    .section { padding: 56px 40px; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #1a7f74;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #1a2340;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .section-sub {
+      font-size: 15px;
+      color: #4a5570;
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: #f7f9fc;
+      border: 0.5px solid #e2e6f0;
+      border-radius: 12px;
+      padding: 24px 20px;
+    }
+    .card-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: #e8f5f3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      color: #1a7f74;
+    }
+    .card-icon svg { width: 18px; height: 18px; stroke: #1a7f74; fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+    .card h3 { font-size: 14px; font-weight: 600; color: #1a2340; margin-bottom: 6px; }
+    .card p { font-size: 13px; color: #4a5570; line-height: 1.6; }
+
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .contact-card {
+      background: #f7f9fc;
+      border: 0.5px solid #e2e6f0;
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .contact-card .label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #1a7f74;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 8px;
+    }
+    .contact-card .title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a2340;
+      margin-bottom: 6px;
+    }
+    .contact-card a { font-size: 13px; color: #1a7f74; text-decoration: none; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    /* SOCIAL */
+    .social-row { margin-top: 16px; display: flex; align-items: center; gap: 8px; }
+    .social-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #1a7f74;
+      background: #e8f5f3;
+      padding: 6px 12px;
+      border-radius: 20px;
+      text-decoration: none;
+      border: 0.5px solid #b2ddd9;
+    }
+    .social-pill svg { width: 14px; height: 14px; stroke: #1a7f74; fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+    .social-pill:hover { background: #d4eeea; }
+
+    /* FOOTER */
+    .footer {
+      padding: 24px 40px;
+      border-top: 0.5px solid #e2e6f0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .footer p { font-size: 12px; color: #8a92a6; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 12px; color: #8a92a6; text-decoration: none; }
+    .footer-links a:hover { color: #1a7f74; }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .nav, .construction-bar, .hero, .section, .footer { padding-left: 20px; padding-right: 20px; }
+      .divider { margin: 0 20px; }
+      .hero h1 { font-size: 28px; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">
-    <div class="logo-mark"><span>M</span></div>
-    Masters of Real English
-  </a>
-  <ul class="nav-links">
-    <li><a href="#programs">Programs</a></li>
-    <li><a href="#about">Mission</a></li>
-    <li><a href="#process">How It Works</a></li>
-    <li><a href="#testimonials">Stories</a></li>
-    <li><a href="#contact" class="nav-cta">Enroll</a></li>
-  </ul>
-</nav>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="wordmark">Masters of <span>Real English</span></div>
+    <div class="badge">Coming soon</div>
+  </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-left">
-    <span class="hero-eyebrow">501(c)(3) Nonprofit · Fremont, CA</span>
-    <h1 class="hero-title">
-      English<br>mastery,<br><em>within reach</em>
-    </h1>
-    <p class="hero-desc">
-      Rigorous, affordable English prep — from honors coursework to AP and SAT — built for students who deserve more than a tutoring center.
-    </p>
-    <div class="hero-actions">
-      <a href="#programs" class="btn-primary">Explore Programs</a>
-      <a href="#about" class="btn-ghost">Our Mission</a>
-    </div>
-    <div class="hero-stats">
-      <div>
-        <div class="stat-num">3</div>
-        <div class="stat-label">Programs</div>
-      </div>
-      <div>
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Nonprofit</div>
-      </div>
-      <div>
-        <div class="stat-num">K–12</div>
-        <div class="stat-label">Served</div>
-      </div>
+  <!-- CONSTRUCTION BAR -->
+  <div class="construction-bar">
+    <div class="dot"></div>
+    <p><strong>We're building our full website.</strong> In the meantime, everything you need is right here.</p>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="tag">Student-run nonprofit</div>
+    <h1>English that works <em>in real life</em></h1>
+    <p>We offer free English classes, workshops, and one-to-one sessions — built around real communication, taught by people who genuinely care.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn-primary">Get in touch</a>
+      <a href="#volunteer" class="btn-secondary">Volunteer with us</a>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-right-bg"></div>
-    <div class="hero-right-inner">
-      <div class="quote-card">
-        <span class="quote-mark">"</span>
-        <p class="quote-text">Language is the road map of a culture. It tells you where its people come from and where they are going.</p>
-        <span class="quote-attr">— Rita Mae Brown</span>
-      </div>
-    </div>
-    <div class="floating-badge">
-      <div class="floating-badge-inner">
-        <span class="badge-num">501</span>
-        <span class="badge-text">(c)(3)<br>Nonprofit</span>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- MISSION STRIP -->
-<div class="mission-strip" id="about">
-  <div class="mission-strip-inner">
-    <div>
-      <p class="mission-title">Rooted in the belief that <strong>real English education</strong> should not be a privilege.</p>
-    </div>
-    <div class="mission-divider"></div>
-    <div class="mission-text">
-      <p>Masters of Real English is a nonprofit organization dedicated to closing the language arts gap for students who need it most. We offer rigorous coursework — honors prep, AP English, and SAT verbal — at accessible price points, grounded in the conviction that high-quality instruction should be the rule, not the exception.</p>
-      <p>Our approach is substance over shortcuts: we teach students to truly think, write, and communicate — skills that outlast any single exam.</p>
-    </div>
-  </div>
-</div>
+  <div class="divider"></div>
 
-<!-- PROGRAMS -->
-<section id="programs">
-  <div class="section-tag">What We Offer</div>
-  <h2 class="section-title">Three pathways.<br>One standard of excellence.</h2>
-  <p class="section-sub">Each program is crafted for a distinct academic milestone, all unified by our commitment to deep learning over test-taking tricks.</p>
+  <!-- WHAT WE OFFER -->
+  <div class="section" id="programmes">
+    <div class="section-label">What we offer</div>
+    <h2>Learning built around you</h2>
+    <p class="section-sub">Everything we run is free of charge, and open to learners of all levels. No prior experience needed.</p>
+    <div class="cards">
 
-  <div class="programs-grid">
-    <!-- Honors Prep -->
-    <div class="program-card">
-      <div class="program-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-      </div>
-      <div class="program-level">Foundations</div>
-      <h3 class="program-name">Honors Class Prep</h3>
-      <p class="program-desc">Build the reading comprehension, analytical writing, and literary vocabulary needed to thrive in an honors-level English course.</p>
-      <ul class="program-features">
-        <li>Close reading techniques</li>
-        <li>Analytical paragraph structure</li>
-        <li>Vocabulary in context</li>
-        <li>Literary device mastery</li>
-      </ul>
-    </div>
-
-    <!-- AP Prep -->
-    <div class="program-card">
-      <div class="program-icon">
-        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-      </div>
-      <div class="program-level">Advanced</div>
-      <h3 class="program-name">AP English Prep</h3>
-      <p class="program-desc">Prepare for AP Literature and/or AP Language with focused essay training, rhetorical analysis, and timed writing under exam conditions.</p>
-      <ul class="program-features">
-        <li>Free response essay drills</li>
-        <li>Rhetorical analysis practice</li>
-        <li>Argument synthesis writing</li>
-        <li>AP exam scoring rubric training</li>
-      </ul>
-    </div>
-
-    <!-- SAT Prep -->
-    <div class="program-card">
-      <div class="program-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      </div>
-      <div class="program-level">Test Prep</div>
-      <h3 class="program-name">SAT Verbal Prep</h3>
-      <p class="program-desc">Target the Reading and Writing sections of the Digital SAT with adaptive practice, evidence-based strategies, and score-milestone tracking.</p>
-      <ul class="program-features">
-        <li>Digital SAT format mastery</li>
-        <li>Evidence-based reading skills</li>
-        <li>Grammar & usage patterns</li>
-        <li>Score improvement tracking</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- WHY US -->
-<section class="why-section" id="approach">
-  <div class="why-grid">
-    <div>
-      <div class="section-tag">Why Choose Us</div>
-      <h2 class="section-title">We teach students to think, not just to score.</h2>
-      <div class="why-list">
-        <div class="why-item">
-          <span class="why-num">01</span>
-          <div>
-            <p class="why-item-title">Nonprofit, so your dollars go to the mission</p>
-            <p class="why-item-text">No investor margins. Every dollar supports instruction, curriculum development, and access for underserved students.</p>
-          </div>
+      <div class="card">
+        <div class="card-icon">
+          <!-- people / group icon -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
         </div>
-        <div class="why-item">
-          <span class="why-num">02</span>
-          <div>
-            <p class="why-item-title">Substantive, rigorous curriculum</p>
-            <p class="why-item-text">We don't do trick lists or filler homework. Students engage with authentic texts, real arguments, and demanding writing standards.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <span class="why-num">03</span>
-          <div>
-            <p class="why-item-title">Pathways toward recognized credentials</p>
-            <p class="why-item-text">We're actively pursuing partnerships with College Board and accreditation bodies to give our students and programs the recognition they deserve.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <span class="why-num">04</span>
-          <div>
-            <p class="why-item-title">Small cohorts, big results</p>
-            <p class="why-item-text">We prioritize depth of engagement over enrollment numbers. Students receive real attention, not a login and a worksheet.</p>
-          </div>
-        </div>
+        <h3>Group classes</h3>
+        <p>Structured English lessons in a supportive group setting, open to all levels.</p>
       </div>
-    </div>
-    <div class="why-visual">
-      <blockquote class="why-big-quote">
-        "Real English isn't memorizing grammar rules. It's knowing how language shapes thought — and how to use that power."
-        <cite>— Masters of Real English</cite>
-      </blockquote>
+
+      <div class="card">
+        <div class="card-icon">
+          <!-- presentation / workshop icon -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M2 3h20v13H2z"/>
+            <path d="M8 21h8M12 17v4"/>
+          </svg>
+        </div>
+        <h3>Workshops</h3>
+        <p>Focused sessions on pronunciation, writing, interviews, and everyday conversation.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <!-- single person / 1-on-1 icon -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <h3>One-to-one sessions</h3>
+        <p>Personal time with a volunteer tutor, tailored entirely to your goals.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <!-- heart / volunteer icon -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <h3>Volunteering</h3>
+        <p>Join as a tutor, organiser, or support volunteer. No teaching experience required.</p>
+      </div>
+
     </div>
   </div>
-</section>
 
-<!-- PROCESS -->
-<section id="process">
-  <div class="section-tag">How It Works</div>
-  <h2 class="section-title">Simple to start.<br>Rigorous to finish.</h2>
-  <p class="section-sub">Enrollment is straightforward. The learning is where we challenge you.</p>
+  <div class="divider"></div>
 
-  <div class="process-row">
-    <div class="process-step">
-      <div class="step-dot"><span class="step-dot-num">1</span></div>
-      <p class="step-title">Choose a Program</p>
-      <p class="step-desc">Select Honors Prep, AP, or SAT Verbal based on your academic goals and current level.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-dot"><span class="step-dot-num">2</span></div>
-      <p class="step-title">Placement Assessment</p>
-      <p class="step-desc">A short diagnostic tells us where you are so we can build a learning path that actually helps.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-dot"><span class="step-dot-num">3</span></div>
-      <p class="step-title">Begin Coursework</p>
-      <p class="step-desc">Dive into structured sessions with readings, writing assignments, and meaningful feedback.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-dot"><span class="step-dot-num">4</span></div>
-      <p class="step-title">Track Your Growth</p>
-      <p class="step-desc">Regular milestones show you and your family exactly how far you've come — and where to go next.</p>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials-section" id="testimonials">
-  <div class="section-tag">Student Stories</div>
-  <h2 class="section-title" style="color: rgba(250,247,242,0.95);">What students are saying</h2>
-
-  <div class="testimonials-grid">
-    <div class="testimonial-card">
-      <div class="testimonial-stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
-      <p class="testimonial-text">"Before this program I dreaded English essays. After, I actually look forward to them. The way they break down argument structure just clicks."</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">AM</div>
-        <div>
-          <p class="author-name">Avery M.</p>
-          <p class="author-detail">AP English Prep · Grade 11</p>
-        </div>
+  <!-- CONTACT -->
+  <div class="section" id="contact">
+    <div class="section-label">Get in touch</div>
+    <h2>We'd love to hear from you</h2>
+    <p class="section-sub">Whether you're looking to join a class or just have a question, drop us a message — we're happy to help.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="label">General enquiries</div>
+        <div class="title">Classes and questions</div>
+        <a href="mailto:contact@morelearning.org">contact@morelearning.org</a>
+      </div>
+      <div class="contact-card" id="volunteer">
+        <div class="label">Volunteering</div>
+        <div class="title">Join as a volunteer</div>
+        <a href="mailto:volunteer@morelearning.org">volunteer@morelearning.org</a>
       </div>
     </div>
-    <div class="testimonial-card">
-      <div class="testimonial-stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
-      <p class="testimonial-text">"My SAT Reading score went from a 580 to a 700. More importantly, I actually understand what I'm reading now — that's the real win."</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">JP</div>
-        <div>
-          <p class="author-name">Jordan P.</p>
-          <p class="author-detail">SAT Verbal Prep · Grade 12</p>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
-      <p class="testimonial-text">"The honors prep course was exactly what I needed going into 9th grade. The vocabulary and close reading skills made my first semester so much easier."</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">SL</div>
-        <div>
-          <p class="author-name">Simone L.</p>
-          <p class="author-detail">Honors Prep · Grade 9</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section" id="contact">
-  <div class="section-tag">Ready to Begin?</div>
-  <h2 class="section-title">Your next chapter starts here.</h2>
-  <p class="section-sub">Enrollment is open. Reach out to learn which program is right for you, or ask about financial assistance — we're a nonprofit for a reason.</p>
-  <div class="cta-actions">
-    <a href="mailto:info@mastersofrealenglish.org" class="btn-primary">Get in Touch</a>
-    <a href="#programs" class="btn-ghost">Browse Programs</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <a href="#" class="nav-logo" style="color: rgba(250,247,242,0.9); text-decoration: none; display: flex; align-items: center; gap: 10px;">
-        <div class="logo-mark"><span>M</span></div>
-        <span style="font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600;">Masters of Real English</span>
+    <div class="social-row">
+      <a href="https://instagram.com/mastersofrealenglish" class="social-pill" target="_blank" rel="noopener noreferrer">
+        <!-- instagram icon -->
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+        @mastersofrealenglish
       </a>
-      <p>A 501(c)(3) nonprofit committed to rigorous, accessible English education for all students.</p>
-    </div>
-    <div>
-      <p class="footer-col-title">Programs</p>
-      <ul class="footer-links">
-        <li><a href="#programs">Honors Prep</a></li>
-        <li><a href="#programs">AP English</a></li>
-        <li><a href="#programs">SAT Verbal</a></li>
-      </ul>
-    </div>
-    <div>
-      <p class="footer-col-title">Organization</p>
-      <ul class="footer-links">
-        <li><a href="#about">Our Mission</a></li>
-        <li><a href="#approach">Approach</a></li>
-        <li><a href="#testimonials">Student Stories</a></li>
-      </ul>
-    </div>
-    <div>
-      <p class="footer-col-title">Connect</p>
-      <ul class="footer-links">
-        <li><a href="mailto:info@mastersofrealenglish.org">Email Us</a></li>
-        <li><a href="#contact">Enroll</a></li>
-        <li><a href="#contact">Donate</a></li>
-      </ul>
     </div>
   </div>
-  <div class="footer-bottom">
-    <p class="footer-copy">© 2025 Masters of Real English · All Rights Reserved · Fremont, CA</p>
-    <span class="footer-nonprofit">501(c)(3) Nonprofit</span>
-  </div>
-</footer>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Masters of Real English. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#contact">Contact</a>
+      <a href="#volunteer">Volunteer</a>
+    </div>
+  </footer>
 
 </body>
 </html>
